@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+</div>
+<h4>Please provide the following details: </h4>
+<form (submit)='onSubmit()'>
+
+  <label for="flightNumber">Flight Number: </label>
+  <input id="flightNumber" name="flightNumber" [(ngModel)]='flightNumber' type="text">
+  <br>
+
+  <label for="origin">Origin: </label>
+  <input id="origin" name="origin" [(ngModel)]='origin' type="text">
+  <br>
+
+  <label for="destination">Destination: </label>
+  <input id="destination" name="destination" [(ngModel)]='destination' type="text">
+  <br>
+
+  <label for="date">Date: </label>
+  <input id="date" name="date" [(ngModel)]='date' type="text">
+  <br>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<br>
+
+<app-flight *ngIf="outputFlight.flightNumber !== undefined" [outputFlight]="outputFlight"></app-flight>
